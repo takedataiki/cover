@@ -27,7 +27,12 @@
     </ul>
   </div>
 
-  <VideoPlayer v-if="playlist.length > 0" :key="playlistKey" :playlist='playlist' />
+  <VideoPlayer 
+    v-if="playlist.length > 0" 
+    :key="playlistKey" 
+    :playlist='playlist' 
+    @remove-video="removeFromPlaylist"
+  />
 </template>
 
 <script>
@@ -104,6 +109,9 @@ export default {
       } catch (error) {
         console.error('Error channel videos:', error)
       }
+    },
+    removeFromPlaylist(index) {
+      this.playlist.splice(index, 1)
     }
   }
 }

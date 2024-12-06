@@ -4,7 +4,7 @@
     <div class="d-flex flex-column align-items-center justify-content-center">
         <div class="mt-3 d-flex align-items-center">
           <button 
-            class="rounded-circle shadow-lg border-white me-3" 
+            class="rounded-circle shadow-lg border-white me-3 text-black" 
             style="width: 50px; height: 50px; border: 3px solid white; background-color: transparent;" 
             @click="previousVideo" 
             :disabled="currentVideoIndex === 0"
@@ -12,14 +12,14 @@
             <i class="bi bi-skip-backward"></i>
           </button>
           <button @click="togglePlay" 
-            class="rounded-circle shadow-lg" 
+            class="rounded-circle shadow-lg text-black" 
             style="width: 75px; height: 75px; border: 3px solid white; background-color: transparent;"
           >
-            <i class="bi bi-play-fill display-6 ps-2" v-if="!isPlaying"></i>
+            <i class="bi bi-play-fill display-6" v-if="!isPlaying"></i>
             <i class="bi bi-pause-fill display-6" v-else></i>
           </button>
           <button 
-            class="rounded-circle shadow-lg border-white ms-3" 
+            class="rounded-circle shadow-lg border-white ms-3 text-black" 
             style="width: 50px; height: 50px; border: 3px solid white; background-color: transparent;"
             @click="nextVideo" 
             :disabled="currentVideoIndex === playlist.length - 1"
@@ -42,6 +42,7 @@
             <div class="ms-3">
               <p>{{ video.snippet.title }}</p>
             </div>
+            <i class="bi bi-trash ms-auto ps-1" @click="removeList(index)"></i>
           </li>
         </ul>
       </div>
@@ -116,6 +117,9 @@ export default {
       } else {
         this.player.playVideo()
       }
+    },
+    removeList(index) {
+      this.$emit('remove-video', index)
     }
   }
 }
