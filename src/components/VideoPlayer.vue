@@ -15,7 +15,7 @@
             class="rounded-circle shadow-lg text-black" 
             style="width: 75px; height: 75px; border: 3px solid white; background-color: transparent;"
           >
-            <i class="bi bi-play-fill display-6" v-if="!isPlaying"></i>
+            <i class="bi bi-play-fill display-6 ps-1" v-if="!isPlaying"></i>
             <i class="bi bi-pause-fill display-6" v-else></i>
           </button>
           <button 
@@ -42,7 +42,7 @@
             <div class="ms-3">
               <p>{{ video.snippet.title }}</p>
             </div>
-            <i class="bi bi-trash ms-auto ps-1" @click="removeList(index)"></i>
+            <i class="bi bi-trash ms-auto ps-1" @click.stop="removeList(index)"></i>
           </li>
         </ul>
       </div>
