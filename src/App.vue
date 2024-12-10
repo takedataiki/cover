@@ -1,6 +1,6 @@
 <template>
     <div class="container mt-5">
-    <div class="input-group mb-5">
+    <div class="input-group mb-5 p-5">
       <input 
         v-model="searchQuery"
         @keyup.enter="searchChannels"
@@ -99,7 +99,7 @@ export default {
         for (const item of this.items) {
           const title = item.snippet.title.toLowerCase()
           const duration = item.contentDetails.duration
-          if (title.includes('歌ってみた') || title.includes('cover')) {
+          if (title.includes('歌ってみた') || title.includes('cover') || title.includes('歌いました')) {
             if (duration.includes('M') && duration !== 'PT1M') {
               this.playlist.push(item)
             }
