@@ -5,7 +5,7 @@
         <div class="mt-3 d-flex align-items-center">
           <button 
             class="rounded-circle shadow-lg border-white me-3 text-black" 
-            style="width: 50px; height: 50px; border: 3px solid white; background-color: transparent;" 
+            style="width: 48px; height: 48px; border: 3px solid white; background-color: transparent;" 
             @click="previousVideo" 
             :disabled="currentVideoIndex === 0"
           >
@@ -13,14 +13,14 @@
           </button>
           <button @click="togglePlay" 
             class="rounded-circle shadow-lg text-black" 
-            style="width: 75px; height: 75px; border: 3px solid white; background-color: transparent;"
+            style="width: 64px; height: 64px; border: 3px solid white; background-color: transparent;"
           >
             <i class="bi bi-play-fill display-6 ps-1" v-if="!isPlaying"></i>
             <i class="bi bi-pause-fill display-6" v-else></i>
           </button>
           <button 
             class="rounded-circle shadow-lg border-white ms-3 text-black" 
-            style="width: 50px; height: 50px; border: 3px solid white; background-color: transparent;"
+            style="width: 48px; height: 48px; border: 3px solid white; background-color: transparent;"
             @click="nextVideo" 
             :disabled="currentVideoIndex === playlist.length - 1"
           >
