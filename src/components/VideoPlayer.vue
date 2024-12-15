@@ -4,28 +4,52 @@
     <div class="d-flex flex-column align-items-center justify-content-center">
         <div class="mt-3 d-flex align-items-center">
           <button 
-            class="rounded-circle shadow-lg border-white me-3 text-black" 
+            class="rounded-circle shadow border-white me-3 text-black" 
             style="width: 48px; height: 48px; border: 3px solid white; background-color: transparent;" 
             @click="previousVideo" 
             :disabled="currentVideoIndex === 0"
           >
-            <i class="bi bi-skip-backward"></i>
+            <i class="bi bi-skip-backward-fill"></i>
           </button>
+          <!-- <div 
+            class="rounded-circle shadow border border-white border-5 text-black bg-light d-flex align-items-center justify-content-center" 
+            style="width: 48px; height: 48px;" 
+            @click="previousVideo" 
+            :disabled="currentVideoIndex === 0"
+          >
+            <i class="bi bi-skip-backward-fill"></i>
+          </div> -->
           <button @click="togglePlay" 
-            class="rounded-circle shadow-lg text-black" 
+            class="rounded-circle shadow text-black" 
             style="width: 64px; height: 64px; border: 3px solid white; background-color: transparent;"
           >
             <i class="bi bi-play-fill display-6 ps-1" v-if="!isPlaying"></i>
             <i class="bi bi-pause-fill display-6" v-else></i>
           </button>
+          <!-- <button 
+            @click="togglePlay" 
+            class="rounded-circle shadow border border-white border-5 text-black bg-light d-flex align-items-center justify-content-center ms-3 me-3" 
+            style="width: 64px; height: 64px;"
+          >
+            <i class="bi bi-play-fill display-6 ps-1" v-if="!isPlaying"></i>
+            <i class="bi bi-pause-fill display-6" v-else></i>
+          </button> -->
           <button 
-            class="rounded-circle shadow-lg border-white ms-3 text-black" 
+            class="rounded-circle shadow border-white ms-3 text-black" 
             style="width: 48px; height: 48px; border: 3px solid white; background-color: transparent;"
             @click="nextVideo" 
             :disabled="currentVideoIndex === playlist.length - 1"
           >
-            <i class="bi bi-skip-forward"></i>
+            <i class="bi bi-skip-forward-fill"></i>
           </button>
+          <!-- <div 
+            class="rounded-circle shadow border border-white border-5 text-black bg-light d-flex align-items-center justify-content-center" 
+            style="width: 48px; height: 48px;" 
+            @click="previousVideo" 
+            :disabled="currentVideoIndex === 0"
+          >
+            <i class="bi bi-skip-forward-fill"></i>
+          </div> -->
         </div>
         <ul class="list-group list-group-flush w-100 mt-5">
           <li

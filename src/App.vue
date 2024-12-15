@@ -1,6 +1,6 @@
 <template>
-    <div class="container mt-5">
-    <div class="input-group mb-5 p-5">
+    <div class="container mt-3">
+    <div class="input-group mb-3 p-5">
       <input 
         v-model="searchQuery"
         @keyup.enter="searchChannels"
@@ -9,7 +9,7 @@
       <span class="input-group-text" @click="searchChannels"><i class="bi bi-search"></i></span>
     </div>
 
-    <ul class="list-group list-group-flush mt-5">
+    <ul class="list-group list-group-flush mt-3">
       <li
         v-for="channel in channels"
         :key="channel.id.channelId"
